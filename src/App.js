@@ -1,24 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import FruitCard from './components/FruitCard';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { CardDeck, Card } from 'reactstrap';
+
+import Apples from './img/apples.jpeg';
+import Bananas from './img/bananas.jpg';
+import Plums from './img/plums.jpg';
+import Blueberries from './img/blueberries.jpg';
+import Strawberries from './img/strawberries.jpg';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Fruit Selection</h1>
+      <CardDeck className='box'>
+        <Card outline color='danger' className='inbox'>
+          <FruitCard name={'Strawberries'} price={1.99} picture={Strawberries} />
+        </Card>
+        <Card outline color='danger' className='inbox'>
+          <FruitCard name={'Bananas'} price={1.50} picture={Bananas} />
+        </Card>
+        <Card outline color='danger' >
+          <FruitCard name={'Apples'} price={2.99} picture={Apples} />
+        </Card>
+        <Card outline color='danger' >
+          <FruitCard name={'Plums'} price={0.99} picture={Plums} />
+        </Card>
+        <Card outline color='danger' >
+          <FruitCard name={'Blueberries'} price={2.99} picture={Blueberries} />
+        </Card>
+      </CardDeck>
     </div>
   );
 }
